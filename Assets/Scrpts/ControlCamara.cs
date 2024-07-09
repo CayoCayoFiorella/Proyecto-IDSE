@@ -5,23 +5,23 @@ using UnityEngine;
 public class ControlCamara : MonoBehaviour
 {
     public Transform objetivoASeguir;
-    private float distanciaObjetivoX = 22f;
-    private float velocidadCamara = 15f;
-    public bool suavizadoActivado = false;
-    private Vector3 nuevaPosicion;
+    public Vector3 offesset = new Vector3(0.38f, 19.6f, -33.52f);
+
     // Update is called once per frame
+
+    private void Start()
+    {
+
+    }
+
     void Update()
     {
-        nuevaPosicion = this.transform.position;
-        nuevaPosicion.x = objetivoASeguir.transform.position.x - distanciaObjetivoX;
-        nuevaPosicion.z = objetivoASeguir.transform.position.z;
-        if (suavizadoActivado)
+        if (objetivoASeguir != null)
         {
-            this.transform.position = Vector3.Lerp(this.transform.position, nuevaPosicion, velocidadCamara * Time.deltaTime);
-        }
-        else
-        {
-            this.transform.position = nuevaPosicion;
-        }
-    }
+            Vector3 posicionObjetivo = objetivoASeguir.position + offesset;
+            posicionObjetivo.x = transform.position.x;
+            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * 5f);
+
+        }
+    }
 }
