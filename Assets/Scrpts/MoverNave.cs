@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoverNave : MonoBehaviour
 {
-    public float velocidad = 2f; // Velocidad de movimiento de la nave
+    public float velocidad = 0.5f; // Velocidad de movimiento de la nave
 
     // Start is called before the first frame update
     Rigidbody rigidbody;
@@ -26,24 +26,33 @@ public class MoverNave : MonoBehaviour
     }
 
     private void Mover()
+
     {
+        Vector3 direccion = Vector3.zero;
+
         if (Input.GetKey(KeyCode.W))
         {
-            rigidbody.AddRelativeForce(Vector3.up*velocidad);
+            direccion += Vector3.up; // Mover hacia arriba
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            rigidbody.AddRelativeForce(Vector3.down*velocidad);
+            direccion += Vector3.down; // Mover hacia abajo
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            rigidbody.AddRelativeForce(Vector3.left*velocidad);
+            direccion += Vector3.left; // Mover hacia la izquierda
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            rigidbody.AddRelativeForce(Vector3.right*velocidad);
+            direccion += Vector3.right; // Mover hacia la derecha
         }
-        else if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)){
+
+        if (direccion != Vector3.zero)
+        {
+            rigidbody.velocity=direccion.normalized * velocidad; // Mover en la dirección calculada
+        }
+        else
+        {
             rigidbody.velocity = Vector3.zero;
             rigidbody.angularVelocity = Vector3.zero;
         }
