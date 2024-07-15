@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class MoverNave : MonoBehaviour
 {
-    public float velocidad = 10f; // Velocidad de movimiento de la nave
+    public float velocidad = 0.5f; // Velocidad de movimiento de la nave
 
     // Start is called before the first frame update
+    Rigidbody rigidbody;
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,22 +26,35 @@ public class MoverNave : MonoBehaviour
     }
 
     private void Mover()
+
     {
+        Vector3 direccion = Vector3.zero;
+
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.up * velocidad * Time.deltaTime);
+            direccion += Vector3.up; // Mover hacia arriba
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.down * velocidad * Time.deltaTime);
+            direccion += Vector3.down; // Mover hacia abajo
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * velocidad * Time.deltaTime);
+            direccion += Vector3.left; // Mover hacia la izquierda
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * velocidad * Time.deltaTime);
+            direccion += Vector3.right; // Mover hacia la derecha
+        }
+
+        if (direccion != Vector3.zero)
+        {
+            rigidbody.velocity=direccion.normalized * velocidad; // Mover en la dirección calculada
+        }
+        else
+        {
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
         }
     }
 }
