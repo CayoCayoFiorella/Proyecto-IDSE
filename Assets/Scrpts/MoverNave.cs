@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoverNave : MonoBehaviour
 {
-    public float velocidad = 0.5f; // Velocidad de movimiento de la nave
+    public float velocidad = 60.0f; // Velocidad de movimiento de la nave
 
     // Start is called before the first frame update
     Rigidbody rigidbody;
@@ -49,7 +49,7 @@ public class MoverNave : MonoBehaviour
 
         if (direccion != Vector3.zero)
         {
-            rigidbody.velocity=direccion.normalized * velocidad; // Mover en la dirección calculada
+            rigidbody.velocity = direccion.normalized * velocidad; // Mover en la dirección calculada
         }
         else
         {
@@ -57,4 +57,5 @@ public class MoverNave : MonoBehaviour
             rigidbody.angularVelocity = Vector3.zero;
         }
     }
+
 }

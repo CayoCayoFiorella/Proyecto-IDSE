@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlCamara : MonoBehaviour
 {
     public Transform objetivoASeguir;
-    public Vector3 offesset = new Vector3(0.38f, 19.6f, -33.52f);
+    public Vector3 offesset = new Vector3(-884, -466, -298);
 
     // Update is called once per frame
 
