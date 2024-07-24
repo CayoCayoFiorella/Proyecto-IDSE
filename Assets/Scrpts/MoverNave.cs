@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MoverNave : MonoBehaviour
 {
-    public float velocidad = 60.0f; // Velocidad de movimiento de la nave
+    public float velocidad = 60; // Velocidad de movimiento de la nave
 
     // Start is called before the first frame update
     Rigidbody rigidbody;
+    public Transform transforms;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        transforms = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -18,6 +20,7 @@ public class MoverNave : MonoBehaviour
     {
 
         procesarInput();
+        rotacion();
     }
 
     private void procesarInput()
@@ -58,4 +61,19 @@ public class MoverNave : MonoBehaviour
         }
     }
 
+    public void rotacion()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            var rotarDerecha = transforms.rotation;
+            rotarDerecha.z -= Time.deltaTime * 1 / 2;
+            transforms.rotation = rotarDerecha;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            var rotarIzquierda = transforms.rotation;
+            rotarIzquierda.z += Time.deltaTime * 1 / 2;
+            transforms.rotation = rotarIzquierda;
+        }
+    }
 }

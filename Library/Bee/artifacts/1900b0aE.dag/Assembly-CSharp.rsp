@@ -356,7 +356,6 @@
 -analyzer:"D:/UNSA 2024A/Projects Unity/2022.3.25f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scrpts/ControlCamara.cs"
 "Assets/Scrpts/DispararNave.cs"
-"Assets/Scrpts/LimitesNave.cs"
 "Assets/Scrpts/MoverNave.cs"
 -langversion:9.0
 /deterministic

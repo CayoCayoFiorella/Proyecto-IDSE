@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scrpts\ControlCamara.cs" />
     <Compile Include="Assets\Scrpts\DispararNave.cs" />
-    <Compile Include="Assets\Scrpts\LimitesNave.cs" />
     <Compile Include="Assets\Scrpts\MoverNave.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class ControlCamara : MonoBehaviour
 {
-    public Transform objetivoASeguir;
-    public Vector3 offesset = new Vector3(-884, -466, -298);
-
-    // Update is called once per frame
-
-    private void Start()
+    public GameObject Target;
+    void Start()
     {
 
     }
 
     void Update()
     {
-        if (objetivoASeguir != null)
-        {
-            Vector3 posicionObjetivo = objetivoASeguir.position + offesset;
-            posicionObjetivo.x = transform.position.x;
-            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, Time.deltaTime * 5f);
+        transform.position = new Vector3(Target.transform.position.x, Target.transform.position.y, transform.position.z);
+    }
 
-        }
-    }
 }
