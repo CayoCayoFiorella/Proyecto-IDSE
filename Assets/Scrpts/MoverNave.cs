@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class MoverNave : MonoBehaviour
 {
-    public float velocidad = 0.5f; // Velocidad de movimiento de la nave
+    public float velocidad = 5.0f; // Velocidad de movimiento de la nave
+    private Rigidbody rigidbody;
+    public AudioSource propulsionAudioSource; // Asigna esto en el Inspector
+    private bool isMoving = false;
 
-    // Start is called before the first frame update
-    Rigidbody rigidbody;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+
+        // Asegúrate de que el AudioSource esté asignado
+        if (propulsionAudioSource == null)
+        {
+            Debug.LogError("No se encontró el AudioSource para el sonido de propulsión.");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         procesarInput();
     }
 
@@ -26,7 +31,6 @@ public class MoverNave : MonoBehaviour
     }
 
     private void Mover()
-
     {
         Vector3 direccion = Vector3.zero;
 
@@ -49,12 +53,44 @@ public class MoverNave : MonoBehaviour
 
         if (direccion != Vector3.zero)
         {
-            rigidbody.velocity=direccion.normalized * velocidad; // Mover en la dirección calculada
+            rigidbody.velocity = direccion.normalized * velocidad; // Mover en la dirección calculada
+            if (!isMoving)
+            {
+                PlayPropulsionSound(true);
+            }
         }
         else
         {
             rigidbody.velocity = Vector3.zero;
             rigidbody.angularVelocity = Vector3.zero;
+            if (isMoving)
+            {
+                PlayPropulsionSound(false);
+            }
+        }
+    }
+
+    private void PlayPropulsionSound(bool play)
+    {
+        if (propulsionAudioSource != null)
+        {
+            if (play)
+            {
+                if (!propulsionAudioSource.isPlaying)
+                {
+                    propulsionAudioSource.Play();
+                    isMoving = true;
+                }
+            }
+            else
+            {
+                propulsionAudioSource.Stop();
+                isMoving = false;
+            }
+        }
+        else
+        {
+            Debug.LogError("propulsionAudioSource es nulo.");
         }
     }
 }

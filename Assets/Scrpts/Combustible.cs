@@ -1,48 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // Necesario para trabajar con UI
+using UnityEngine.UI;
 
 public class Combustible : MonoBehaviour
 {
-    public float combustible = 100f; // Nivel de combustible inicial
-    public float consumoPorSegundo = 5f; // Cantidad de combustible consumida por segundo
-    public Image imagenCombustibleFrontal; // Referencia a la imagen frontal de la barra de combustible
+    public float combustible = 100f;
+    public float consumoPorSegundo = 5f;
+    public Image imagenCombustibleFrontal;
+    public Canvas endGameCanvas;
+
+    private bool juegoTerminado = false;
+
+    void Start()
+    {
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.gameObject.SetActive(false);
+        }
+    }
 
     void Update()
     {
-        ActualizarCombustible();
+        if (!juegoTerminado)
+        {
+            ActualizarCombustible();
+        }
     }
 
     private void ActualizarCombustible()
     {
-        // Reducir el combustible incluso si no se presiona ninguna tecla
         combustible -= consumoPorSegundo * Time.deltaTime;
 
-        // Asegurate de que el combustible no sea negativo
         if (combustible < 0)
         {
             combustible = 0;
         }
 
-        // Actualiza la imagen frontal de la barra de combustible
         if (imagenCombustibleFrontal != null)
         {
             imagenCombustibleFrontal.fillAmount = combustible / 100f;
         }
+
+        if (combustible <= 0 && !juegoTerminado)
+        {
+            FinDelJuego();
+        }
     }
 
-    // Metodo para recargar el combustible por completo
     public void RecargarCombustible()
     {
         combustible = 100f;
     }
 
-    // Metodo para comprobar si hay combustible disponible
-    public bool TieneCombustible()
+    private void FinDelJuego()
     {
-        return combustible > 0;
+        juegoTerminado = true;
+        PausarJuego();
+    }
+
+    void PausarJuego()
+    {
+        Time.timeScale = 0;
+        Debug.Log("Juego Pausado.");
+
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.gameObject.SetActive(true);
+        }
+
+        AudioManager.Instance.StopBackgroundMusic();
+        AudioManager.Instance.PlayEndGameMusic();
     }
 }
-
-

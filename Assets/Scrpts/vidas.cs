@@ -3,14 +3,14 @@ using UnityEngine.UI;
 
 public class vidas : MonoBehaviour
 {
-    public int v = 3; // Vidas iniciales
-    public Image[] vidasImages; // Referencia a las imágenes de vidas en el HUD
-    public Canvas endGameCanvas; // Referencia al Canvas de End Game
+    public int v = 3;
+    public Image[] vidasImages;
+    public Canvas endGameCanvas;
+    public Canvas next;
     private ParticleSystem particulasDestruccion;
 
     void Start()
     {
-        // Inicializar las imágenes de vidas
         ActualizarVidasUI();
         particulasDestruccion = GetComponentInChildren<ParticleSystem>();
 
@@ -18,26 +18,38 @@ public class vidas : MonoBehaviour
         {
             Debug.LogError("No se encontró el sistema de partículas de destrucción.");
         }
-        else
-        {
-            Debug.Log("Sistema de partículas encontrado: " + particulasDestruccion.name);
-        }
 
         if (endGameCanvas != null)
         {
-            endGameCanvas.gameObject.SetActive(false); // Asegurarse de que esté desactivado al inicio
+            endGameCanvas.gameObject.SetActive(false);
         }
-        else
+
+        if (next != null)
         {
-            Debug.LogError("No se encontró el Canvas de End Game.");
+            next.gameObject.SetActive(false);
         }
+
+        AudioManager.Instance.PlayBackgroundMusic();
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("meteorito") || collision.gameObject.layer == LayerMask.NameToLayer("Satelite"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("meteorito"))
         {
             PerderVida();
+        }
+        else if (collision.gameObject.CompareTag("tierra"))
+        {
+            MostrarNextLevelCanvas();
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger detectado con: " + other.gameObject.name);
+        if (other.CompareTag("tierra"))
+        {
+            MostrarNextLevelCanvas();
         }
     }
 
@@ -47,10 +59,10 @@ public class vidas : MonoBehaviour
         {
             v--;
             ActualizarVidasUI();
+            AudioManager.Instance.PlayExplosionSound();
             if (particulasDestruccion != null)
             {
-                Debug.Log("Activando partículas de destrucción.");
-                particulasDestruccion.Play(); // Activar las partículas de destrucción
+                particulasDestruccion.Play();
             }
         }
 
@@ -65,25 +77,34 @@ public class vidas : MonoBehaviour
     {
         for (int i = 0; i < vidasImages.Length; i++)
         {
-            if (i < v)
-            {
-                vidasImages[i].enabled = true; // Mostrar imagen de vida
-            }
-            else
-            {
-                vidasImages[i].enabled = false; // Ocultar imagen de vida
-            }
+            vidasImages[i].enabled = i < v;
         }
     }
 
     void PausarJuego()
     {
-        Time.timeScale = 0; // Pausar el juego
+        Time.timeScale = 0;
         Debug.Log("Juego Pausado.");
 
         if (endGameCanvas != null)
         {
-            endGameCanvas.gameObject.SetActive(true); // Mostrar el Canvas de End Game
+            endGameCanvas.gameObject.SetActive(true);
         }
+
+        AudioManager.Instance.StopBackgroundMusic();
+        AudioManager.Instance.PlayEndGameMusic();
+    }
+
+    void MostrarNextLevelCanvas()
+    {
+        Time.timeScale = 0;
+        Debug.Log("Colisión con la Tierra. Mostrando el Canvas de Siguiente Nivel y congelando el juego.");
+
+        if (next != null)
+        {
+            next.gameObject.SetActive(true);
+        }
+
+        AudioManager.Instance.StopBackgroundMusic();
     }
 }
