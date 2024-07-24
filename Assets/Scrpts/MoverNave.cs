@@ -79,7 +79,7 @@ public class MoverNave : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Meteorito"))
+        if (collision.gameObject.CompareTag("meteorito"))
         {
             Debug.Log("La nave ha colisionado con un meteorito.");
             // Aquí puedes agregar cualquier lógica que desees cuando la nave colisione con un meteorito
