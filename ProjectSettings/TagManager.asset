@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - nave
+  - limite
+  - meteorito
+  - Satelite
+  - VidasPanel
   layers:
   - Default
   - TransparentFX
@@ -12,10 +17,10 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
+  - limite
+  - meteorito
+  - satelite
+  - nave
   - 
   - 
   - 
