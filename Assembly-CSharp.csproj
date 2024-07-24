@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scrpts\ScoreManager.cs" />
     <Compile Include="Assets\Scrpts\Combustible.cs" />
     <Compile Include="Assets\Scrpts\AudioManager.cs" />
+    <Compile Include="Assets\Scrpts\nextlvl.cs" />
     <Compile Include="Assets\Scrpts\Audios.cs" />
     <Compile Include="Assets\Scrpts\limite.cs" />
     <Compile Include="Assets\Scrpts\MoverNave.cs" />

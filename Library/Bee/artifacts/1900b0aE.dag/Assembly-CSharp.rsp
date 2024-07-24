@@ -359,6 +359,7 @@
 "Assets/Scrpts/Combustible.cs"
 "Assets/Scrpts/limite.cs"
 "Assets/Scrpts/MoverNave.cs"
+"Assets/Scrpts/nextlvl.cs"
 "Assets/Scrpts/ScoreManager.cs"
 "Assets/Scrpts/vidas.cs"
 -langversion:9.0

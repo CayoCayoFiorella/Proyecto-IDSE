@@ -11,6 +11,7 @@ TagManager:
   - VidasPanel
   - destruido
   - tierra
+  - tierra2.0
   layers:
   - Default
   - TransparentFX
