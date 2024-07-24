@@ -62,6 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scrpts\ControlCamara.cs" />
     <Compile Include="Assets\Scrpts\DispararNave.cs" />
+    <Compile Include="Assets\Scrpts\RotarRocaX.cs" />
+    <Compile Include="Assets\Scrpts\RotarPlaneta.cs" />
+    <Compile Include="Assets\Scrpts\RotarRocaY.cs" />
     <Compile Include="Assets\Scrpts\MoverNave.cs" />
   </ItemGroup>
   <ItemGroup>

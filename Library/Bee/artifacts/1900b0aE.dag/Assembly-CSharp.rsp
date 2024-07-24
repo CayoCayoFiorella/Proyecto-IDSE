@@ -357,6 +357,9 @@
 "Assets/Scrpts/ControlCamara.cs"
 "Assets/Scrpts/DispararNave.cs"
 "Assets/Scrpts/MoverNave.cs"
+"Assets/Scrpts/RotarPlaneta.cs"
+"Assets/Scrpts/RotarRocaX.cs"
+"Assets/Scrpts/RotarRocaY.cs"
 -langversion:9.0
 /deterministic
 /optimize+
