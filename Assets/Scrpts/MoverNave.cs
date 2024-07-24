@@ -76,4 +76,13 @@ public class MoverNave : MonoBehaviour
             transforms.rotation = rotarIzquierda;
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Meteorito"))
+        {
+            Debug.Log("La nave ha colisionado con un meteorito.");
+            // Aquí puedes agregar cualquier lógica que desees cuando la nave colisione con un meteorito
+        }
+    }
 }
