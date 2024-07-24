@@ -9,6 +9,7 @@ TagManager:
   - meteorito
   - Satelite
   - VidasPanel
+  - destruido
   layers:
   - Default
   - TransparentFX
