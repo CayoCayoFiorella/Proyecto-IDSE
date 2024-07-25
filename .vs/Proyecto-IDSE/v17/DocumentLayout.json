@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\",
+  "WorkspaceRootPath": "E:\\asdadasd\\Proyecto-IDSE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\Assets\\Scrpts\\MoverNave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scrpts\\MoverNave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\Assets\\Scrpts\\ControlCamara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scrpts\\ControlCamara.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\asdadasd\\Proyecto-IDSE\\Assets\\Scrpts\\MoverNaveE2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scrpts\\MoverNaveE2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,44 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MoverNave.cs",
-              "DocumentMoniker": "D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\Assets\\Scrpts\\MoverNave.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrpts\\MoverNave.cs",
-              "ToolTip": "D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\Assets\\Scrpts\\MoverNave.cs",
-              "RelativeToolTip": "Assets\\Scrpts\\MoverNave.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADIAAAAJAAAA",
+              "Title": "MoverNaveE2.cs",
+              "DocumentMoniker": "E:\\asdadasd\\Proyecto-IDSE\\Assets\\Scrpts\\MoverNaveE2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scrpts\\MoverNaveE2.cs",
+              "ToolTip": "E:\\asdadasd\\Proyecto-IDSE\\Assets\\Scrpts\\MoverNaveE2.cs",
+              "RelativeToolTip": "Assets\\Scrpts\\MoverNaveE2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAABOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T19:29:45.996Z",
+              "WhenOpened": "2024-07-25T03:26:28.878Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ControlCamara.cs",
-              "DocumentMoniker": "D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\Assets\\Scrpts\\ControlCamara.cs",
-              "RelativeDocumentMoniker": "Assets\\Scrpts\\ControlCamara.cs",
-              "ToolTip": "D:\\UNSA 2024A\\Unity Project\\Proyecto-IDSE\\Assets\\Scrpts\\ControlCamara.cs",
-              "RelativeToolTip": "Assets\\Scrpts\\ControlCamara.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T16:07:31.067Z"
             }
           ]
         }
