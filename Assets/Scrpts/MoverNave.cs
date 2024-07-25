@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverNave : MonoBehaviour
+public class MoverNave3 : MonoBehaviour
 {
     public float velocidad = 5.0f; // Velocidad de movimiento de la nave
     private Rigidbody rigidbody;
@@ -11,6 +11,7 @@ public class MoverNave : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         rigidbody = GetComponent<Rigidbody>();
 
         // Asegúrate de que el AudioSource esté asignado

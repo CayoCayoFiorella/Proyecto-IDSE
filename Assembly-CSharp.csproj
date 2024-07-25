@@ -64,14 +64,25 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scrpts\canvamercurio.cs" />
     <Compile Include="Assets\Scrpts\CapsulaCombustible.cs" />
     <Compile Include="Assets\Scrpts\ScoreManager.cs" />
     <Compile Include="Assets\Scrpts\Combustible.cs" />
+    <Compile Include="Assets\Scrpts\cambio de escena.cs" />
+    <Compile Include="Assets\Scrpts\DispararNave.cs" />
+    <Compile Include="Assets\Scrpts\RotarRocaX.cs" />
+    <Compile Include="Assets\Scrpts\MoverNaveNivel1.cs" />
+    <Compile Include="Assets\Scrpts\MoverNaveE2.cs" />
     <Compile Include="Assets\Scrpts\AudioManager.cs" />
+    <Compile Include="Assets\Scrpts\MoverNaveN3.cs" />
     <Compile Include="Assets\Scrpts\nextlvl.cs" />
     <Compile Include="Assets\Scrpts\Audios.cs" />
+    <Compile Include="Assets\Scrpts\RotarPlaneta.cs" />
+    <Compile Include="Assets\Scrpts\cambio de escena2.cs" />
+    <Compile Include="Assets\Scrpts\RotarRocaY.cs" />
     <Compile Include="Assets\Scrpts\limite.cs" />
     <Compile Include="Assets\Scrpts\MoverNave.cs" />
+    <Compile Include="Assets\Scrpts\cambio de escena1.cs" />
     <Compile Include="Assets\Scrpts\camara.cs" />
     <Compile Include="Assets\Scrpts\vidas.cs" />
   </ItemGroup>

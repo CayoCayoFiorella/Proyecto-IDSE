@@ -12,6 +12,8 @@ TagManager:
   - destruido
   - tierra
   - tierra2.0
+  - Meteorito
+  - mercurio
   layers:
   - Default
   - TransparentFX
